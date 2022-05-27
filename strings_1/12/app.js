@@ -1,4 +1,4 @@
-const valueX = prompt();
+const valueX = `var_test_text`;
 let arr = valueX.split(` `)
 let rez = '';
 
