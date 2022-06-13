@@ -8,6 +8,6 @@ const obj = {
     arr = [];
 
 for (let key in obj) {
-    arr.push(obj[key])
+    arr.push(obj[key]);
 }
-console.log(arr)
+console.log(obj)
