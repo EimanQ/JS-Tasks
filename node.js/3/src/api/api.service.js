@@ -1,4 +1,5 @@
-const arrObj = require("../storage/data");
+const fs = require('fs');
+const arrObj = JSON.parse(fs.readFileSync('../storage/data.JSON'));
 
 class Task {
     constructor() {
@@ -18,6 +19,24 @@ class Task {
             ...data
         });
         return this.arrObj;
+    }
+
+    updateItems = (idData) => {
+        if (!idData) throw new Error(`Error,ID is not valid`);
+        return this.arrObj.map((key) => {
+            return {
+                id: idData,
+                name: key.name,
+                surname: key.surname,
+                email: key.email,
+                pwd: key.pwd
+            }
+        });
+    }
+
+    removeItem = (idData) => {
+        if (!idData) throw new Error(`Error, ID is not valid`);
+        return this.arrObj.filter((key) => key.id != idData);
     }
 }
 

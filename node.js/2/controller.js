@@ -6,9 +6,6 @@ const {
     request
 } = require("express");
 const app = express();
-// app.get(`/`, (request, response) => {
-//     response.status(200).send(task());
-// })
 app.use(express.json());
 app.get(`/:id`, (request, response) => {
     const {
@@ -37,7 +34,9 @@ app.delete(`/`, (request, response) => {
     const soluti = new Task();
     response.send(soluti.deleteTask(reqBody));
 })
+
 const port = 3000;
+
 app.listen(port, () => {
     console.log(`All is okay, your port is ${port}`);
 })

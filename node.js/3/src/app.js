@@ -3,7 +3,6 @@ const express = require("express");
 const api = require("./api/api.controller");
 const posts = require("./posts/posts.controller");
 
-
 const app = express();
 
 app.use(bodyParser.json());

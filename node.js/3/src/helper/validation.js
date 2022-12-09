@@ -4,7 +4,7 @@ const validationKey = (request, response, next) => {
 }
 
 const validationEmail = (request, response, next) => {
-    if (!/[\w+@\w+\.\w+]/g.test(request.body.email)) throw new Error(`Your email incorrect`);
+    if (!/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(request.body.email)) throw new Error(`Your email incorrect`);
     next();
 }
 

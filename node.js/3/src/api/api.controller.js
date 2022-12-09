@@ -32,5 +32,29 @@ router.post("/", validationEmail, (request, response) => {
     }
 })
 
+router.put("/:id", (request, response) => {
+    try {
+        const {
+            id
+        } = request.params;
+        const solution = new Task()
+        response.status(200).send(solution.updateItems(id));
+    } catch (e) {
+        response.status(404).send(e.message);
+    }
+})
+
+router.delete("/:id", (request, response) => {
+    try {
+        const {
+            id
+        } = request.params;
+        const solution = new Task()
+        response.status(200).send(solution.removeItem(id));
+    } catch (e) {
+        response.status(404).send(e.message);
+    }
+})
+
 
 module.exports = router;
