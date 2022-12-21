@@ -12,7 +12,7 @@ class Task {
         for (let i = 0; i < this.arr.length; i++) {
             if (this.arr[i] != this.arr[i + 1] && this.arr[i] != this.arr[i - 1]) arrToRet.push(this.arr[i]);
         };
-        return arrToRet
+        return arrToRet;
     };
     splitFunc = (id) => {
         const number = +id;
@@ -20,9 +20,9 @@ class Task {
         const arrayS = [];
         for (let i = 0; i < this.arr.length; i++) {
             if (arrayF.length === number || arrayF.length > number) arrayS.push(this.arr[i]);
-            else arrayF.push(this.arr[i])
+            else arrayF.push(this.arr[i]);
         }
-        return `array (length ${number}) = [${arrayF}]; array(length ${this.arr.length - number}) = [${arrayS}]`;;
+        return `array (length ${number}) = [${arrayF}]; array(length ${this.arr.length - number}) = [${arrayS}]`;
     }
     getTask = (id) => {
         const returnRes = newObj.filter((key) => key.id === id);

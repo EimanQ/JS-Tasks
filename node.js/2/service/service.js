@@ -11,7 +11,7 @@ class Task {
     }
     createTask = (data) => {
         this.arrObjects.push(data);
-        return this.arrObjects
+        return this.arrObjects;
     }
     updateTask = (data) => {
         const updArr = this.arrObjects.map((key) => {
@@ -20,7 +20,7 @@ class Task {
                 "label": `${data.toLowerCase()}`,
                 "category": `${key.category}`,
                 "priority": `${key.priority}`
-            }
+            };
         });
         return updArr;
     }
